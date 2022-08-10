@@ -1,0 +1,12 @@
+R1|Kontrabas|peks|6000.0|5004.0|996.0|12.04.2018. 22:20
+R2|Stradivari|mica|10023.0|9999.0|24.0|12.04.2018. 22:21
+R3|Silver,Silver,Silver|peks|4000.0|3105.0|895.0|12.04.2018. 22:25
+R4|Jazz Bass,Jazz Bass|peks|8000.0|7368.0|632.0|12.04.2018. 22:26
+R5|Strato,Strato,Strato,Strato,Strato|mica|14000.0|13195.0|805.0|12.04.2018. 22:28
+R6|Bass,Bass|peks|3000.0|2392.0|608.0|12.04.2018. 23:08
+R7|Tele,Tele|Markoslav|7000.0|5426.0|1574.0|28.04.2018. 13:16
+R8|Les Paul,Les Paul,Les Paul,Les Paul|Danijel|9000.0|8216.0|784.0|28.04.2018. 15:29
+R9|Les Paul,Les Paul,Les Paul,Les Paul,Les Paul,Les Paul,Les Paul,Les Paul,Les Paul,Silver,Silver|Djuro|22000.0|20556.0|1444.0|18.06.2018. 21:58
+R10|Les Paul,Les Paul,Les Paul|Semi|7000.0|6162.0|838.0|20.01.2020. 19:17
+R11|Eclipse,Eclipse,Eclipse,Eclipse,Eclipse,Eclipse,Eclipse,Eclipse,Eclipse,Eclipse,Tele,Tele,Tele,Tele,Tele|Semi1|40000.0|32215.0|7785.0|20.01.2020. 19:21
+R12|JK6F5,JK6F5,JK6F5,GRG270B,GRG270B,GRG270B,GRG270B,GRG270B,GRG270B,GRG270B,GRG270B,GRG270B,GRG270B,GRG270B,GRG270B|pperic|10000.0|8265.0|1735.0|25.07.2021. 11:36

@@ -1,0 +1,16 @@
+V1|Les Paul|Gibson|47|2054.0|T1|False
+V2|SG|Gibson|79|9308.0|T1|False
+V3|King V|Jackson|120|4355.0|T1|False
+V4|GRG270B|Ibanez|195|375.0|T1|False
+V5|AG95-DBS|Ibanez|50|8900.0|T1|False
+V6|Eclipse|ESP|28|1865.0|T1|False
+V7|Tele|Fender|37|2713.0|T1|False
+V8|Strato|Fender|25|2639.0|T1|False
+V9|Jazz Bass|Fender|4|3684.0|T1|False
+V91|Bass|Fender|16|1196.0|T2|False
+V92|Fretless|Fender|39|9980.0|T2|False
+V93|Silver|Tama|13|1035.0|T3|False
+V94|SBP2|Yamaha|8|1429.0|T3|False
+V95|JK6F5|Yamaha|8|1255.0|T3|False
+V96|Stradivari|Stradivari|122|9999.0|T1|False
+V99|Kontrabas|Yamaha|12|5004.0|T2|False
