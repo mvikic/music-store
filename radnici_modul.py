@@ -3,8 +3,7 @@ import ucitavanje_korisnika
 
 
 def ispisi_meni():
-
-    # Funkcija za ispis menija opcija prodavca
+    """Funkcija za ispis menija opcija prodavca"""
 
     print()
     print("(1) Prikazi sve instrumente na lageru: ")
@@ -18,9 +17,8 @@ def ispisi_meni():
 
 
 def logBrisanje_instrumenta(instrumenti):
-
-    # Kao parametar prima listu instrumenata
-    # Funkcija sluzi za logicko brisanje nekog instrumenta
+    """Kao parametar prima listu instrumenata
+       Funkcija sluzi za logicko brisanje nekog instrumenta"""
 
     zajednicki.ispisi_tabelu(instrumenti)
     while True:
@@ -41,9 +39,8 @@ def logBrisanje_instrumenta(instrumenti):
 
 
 def logVracanje_instrumenta(instrumenti):
-
-    # Kao parametar prima listu instrumenata
-    # Funkcija sluzi za logicko vracanje nekog instrumenta
+    """Kao parametar prima listu instrumenata
+       Funkcija sluzi za logicko vracanje nekog instrumenta"""
 
     zajednicki.ispisi_tabelu(instrumenti)
     while True:
@@ -64,9 +61,8 @@ def logVracanje_instrumenta(instrumenti):
 
 
 def provjera_brisanja(sifra, instrumenti):
-
-    # Kao parametar prima unetu sifru i listu instrumenata
-    # Funkcija sluzi za proveru da li je instrument sa unetom sifrom vec obrisan
+    """Kao parametar prima unetu sifru i listu instrumenata
+       Funkcija sluzi za proveru da li je instrument sa unetom sifrom vec obrisan"""
 
     for i in instrumenti:
         if i["Sifra"] == sifra:
@@ -74,9 +70,8 @@ def provjera_brisanja(sifra, instrumenti):
 
 
 def novi_instrument(instrumenti, tipovi_instrumenata):
-
-    # Kao parametar prima listu instrumenata, i listu tipova instrumenata
-    # Funkcija sluzi za dodavanje novog instrumenta u sistem
+    """Kao parametar prima listu instrumenata, i listu tipova instrumenata
+       Funkcija sluzi za dodavanje novog instrumenta u sistem"""
 
     sifra = ""
     while True:
@@ -119,30 +114,28 @@ def novi_instrument(instrumenti, tipovi_instrumenata):
         if postoji:
             break
     novi_inst = {"Sifra": sifra, "Naziv": naziv, "Proizvodjac": proizvodjac, "Kolicina": int(kolicina), "Cijena": float(cijena),
-         "Tip inst.": tip, "Obrisano logicki": "False"}
+                 "Tip inst.": tip, "Obrisano logicki": "False"}
     instrumenti.append(novi_inst)
     ucitavanje_korisnika.snimi_instrumente(instrumenti)
 
 
 def pogresan_unosKolicine(kolicina):
-
-    # Kao parametar prima unetu kolicinu
-    # Funkcija sluzi za proveru loseg unosa kolicine
+    """Kao parametar prima unetu kolicinu
+       Funkcija sluzi za proveru loseg unosa kolicine"""
 
     try:
         w = int(kolicina)
         if kolicina.isnumeric() and w > 0:
             return False
-    except:
+    except Exception:
         pass
     print("Molimo, unesite cio broj!(veci od 0)")
     return True
 
 
 def izmjena_instrumenta(instrumenti):
-
-    # Kao parametar prima listu instrumenata
-    # Funkcija sluzi za izmenu instrumenta
+    """Kao parametar prima listu instrumenata
+       Funkcija sluzi za izmenu instrumenta"""
 
     zajednicki.ispisi_tabelu(instrumenti)
     while True:
@@ -162,20 +155,17 @@ def izmjena_instrumenta(instrumenti):
     ucitavanje_korisnika.snimi_instrumente(instrumenti)
 
 
-
 def pogresan_unosCijene(cijena):
-
-    # Kao parametar primamo unijetu cijenu kao string
-    # Funkcija sluzi za provjeru unosa cijene
+    """Kao parametar primamo unijetu cijenu kao string
+       Funkcija sluzi za provjeru unosa cijene"""
 
     try:
         if float(cijena) > 0:
             return False
-    except:
+    except Exception:
         pass
     print("Molimo, unesite cio broj!(veci od 0)")
     return True
-
 
 
 def opcije_radnik(instrumenti, tipovi_instrumenata):
@@ -204,6 +194,3 @@ def opcije_radnik(instrumenti, tipovi_instrumenata):
         else:
             print("Los unos, pokusajte ponovo")
             print()
-
-
-

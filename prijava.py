@@ -8,8 +8,7 @@ import time
 
 
 def prijava():
-
-    # Funkcija za prijavu korisnika
+    """Funkcija za prijavu korisnika"""
 
     pokusaji = 0
     korisnici = ucitavanje_korisnika.ucitaj_korisnike()
@@ -56,8 +55,8 @@ def prijava():
 
 def registracija_korisnika(korisnici):
 
-    # Kao parametar primamo listu svih korisnika
-    # Funkcija za registrovanje novog kupca
+    """ Kao parametar primamo listu svih korisnika
+        Funkcija za registrovanje novog kupca"""
 
     korisnicko_ime = ""
     while True:
@@ -91,8 +90,7 @@ def registracija_korisnika(korisnici):
 
 
 def main():
-
-    # Main funkcija pokrece program
+    """Main funkcija pokrece program"""
 
     korisnici = ucitavanje_korisnika.ucitaj_korisnike()
     print(" |##########| DOBRODOSLI U PRODAVNICU |##########|")
@@ -107,13 +105,12 @@ def main():
         elif izbor == "2":
             prijava()
         elif izbor == "3":
-           break
+            break
         else:
             print("Zao nam je, unos je pogresan. Pokusajte ponovo.")
 
     print("Izasli ste iz prodavnice. DOVIDJENJA! :-)")
     time.sleep(4)
-
 
 
 main()

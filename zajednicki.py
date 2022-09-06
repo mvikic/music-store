@@ -3,10 +3,8 @@ import copy
 
 
 def provjera_jedinstvenogImena(korisnicko_ime, korisnici):
-
-    # Funkcija kao parametre prima unijeto korisnicko ime, i listu korisnika
-    # Provjeravamo da li se unijeto korisnicko ime vec nalazi u sistemu
-
+    """Funkcija kao parametre prima unijeto korisnicko ime, i listu korisnika
+       Provjeravamo da li se unijeto korisnicko ime vec nalazi u sistemu"""
 
     for i in korisnici:
         if korisnicko_ime == i["Korisnicko ime"]:
@@ -15,9 +13,8 @@ def provjera_jedinstvenogImena(korisnicko_ime, korisnici):
 
 
 def ukloni_obrisane(svi):
-
-    # Funkcija kao parametar prima listu rijecnika instrumenata,
-    # i izbacuje sve koji su obrisani i cija je kolicina na lageru 0
+    """Funkcija kao parametar prima listu rijecnika instrumenata,
+       i izbacuje sve koji su obrisani i cija je kolicina na lageru 0"""
 
     odg = []
     privr = copy.deepcopy(svi)
@@ -30,9 +27,8 @@ def ukloni_obrisane(svi):
 
 
 def uzimanje_duzineZaglavlja(entiteti):
-
-    # Funkcija za zadatu listu rjecnika, odredjuje maksimalnu duzinu
-    # svake kolone, kako bi ispis u tabeli bio formatiran
+    """Funkcija za zadatu listu rjecnika, odredjuje maksimalnu duzinu
+       svake kolone, kako bi ispis u tabeli bio formatiran"""
 
     if len(entiteti) == 0:
         return "Nema pronadjenih rezultata"
@@ -55,8 +51,7 @@ def uzimanje_duzineZaglavlja(entiteti):
 
 
 def ispisi_tabelu(lista_entiteta):
-
-    # Funkcija prima listu rijecnika, i ispisuje ih u tabelarnom prikazu
+    """Funkcija prima listu rijecnika, i ispisuje ih u tabelarnom prikazu"""
 
     proba = lista_entiteta
 
@@ -80,21 +75,21 @@ def ispisi_tabelu(lista_entiteta):
         print(q.format(lista=lista, AD=list(proba[i].values())))
     print("-" * duzina_crtica)
 
+
 def zamijeni_TipoveZaNaziv(kopija, tipovi):
+    """Funkcija prima listu instrumenata i listu tipova instrumenata
+       i svaka sifra tipa instrumenta u listi instrumenata
+       se zamjenjuje sa nazivom tipa insturmenta"""
 
-    # Funkcija prima listu instrumenata i listu tipova instrumenata
-    # i svaka sifra tipa instrumenta u listi instrumenata se zamjenjuje sa nazivom tipa insturmenta
-
-     for i in kopija:
+    for i in kopija:
         for j in tipovi:
             if j["Sifra"] == i["Tip inst."]:
                 i["Tip inst."] = j["Naziv"]
 
 
 def prikaz_svihInstrumenata(uloga, instrumenti, tipovi):
-
-    # Funkcija prima ulogu kao karakter, listu instrumenata i listu tipova instrumenata
-    # i prikazuje sve instrumente u sistemu sortirane po odredjenom kriterijumu
+    """Funkcija prima ulogu kao karakter, listu instrumenata i listu tipova instrumenata
+       i prikazuje sve instrumente u sistemu sortirane po odredjenom kriterijumu"""
 
     kopija = copy.deepcopy(instrumenti)
     if uloga == "K":
@@ -119,9 +114,7 @@ def prikaz_svihInstrumenata(uloga, instrumenti, tipovi):
 
 
 def pretrazi(krit_pretrage, parametar, lista):
-
-    #Funkcija prima rijec koja se pretrazuje, kljuc u kojem pretrazujemo, i lista instrumenata
-
+    """Funkcija prima rijec koja se pretrazuje, kljuc u kojem pretrazujemo, i lista instrumenata"""
 
     pretraga = []
     for i in lista:
@@ -131,9 +124,8 @@ def pretrazi(krit_pretrage, parametar, lista):
 
 
 def pretrazi_sveInstrumente(uloga, instrumenti, tipovi):
-
-    # Funkcija prima ulogu osobe, listu instrumenata, listu tipova
-    # zaduzena je za pretragu instrumenata po odredjenom kriterijumu
+    """Funkcija prima ulogu osobe, listu instrumenata, listu tipova
+       zaduzena je za pretragu instrumenata po odredjenom kriterijumu"""
 
     kopija = copy.deepcopy(instrumenti)
     if uloga == "K":
@@ -162,12 +154,10 @@ def pretrazi_sveInstrumente(uloga, instrumenti, tipovi):
 
 
 def provjera_sifreInstrumenta(sifra, instrumenti):
-
-    # Funkcija prima unijetu sifru i listu instrumenata
-    # provjerava da li je unijeta sifra jedinstvena
+    """Funkcija prima unijetu sifru i listu instrumenata
+       provjerava da li je unijeta sifra jedinstvena"""
 
     for i in instrumenti:
         if i["Sifra"] == sifra:
             return False
     return True
-

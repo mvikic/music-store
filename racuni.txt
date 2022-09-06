@@ -10,3 +10,4 @@ R9|Les Paul,Les Paul,Les Paul,Les Paul,Les Paul,Les Paul,Les Paul,Les Paul,Les P
 R10|Les Paul,Les Paul,Les Paul|Semi|7000.0|6162.0|838.0|20.01.2020. 19:17
 R11|Eclipse,Eclipse,Eclipse,Eclipse,Eclipse,Eclipse,Eclipse,Eclipse,Eclipse,Eclipse,Tele,Tele,Tele,Tele,Tele|Semi1|40000.0|32215.0|7785.0|20.01.2020. 19:21
 R12|JK6F5,JK6F5,JK6F5,GRG270B,GRG270B,GRG270B,GRG270B,GRG270B,GRG270B,GRG270B,GRG270B,GRG270B,GRG270B,GRG270B,GRG270B|pperic|10000.0|8265.0|1735.0|25.07.2021. 11:36
+R13|Kontrabas,Kontrabas,Kontrabas,Kontrabas,Kontrabas,Kontrabas,Kontrabas,Kontrabas|lukar|42000.0|40032.0|1968.0|31.08.2022. 03:13

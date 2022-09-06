@@ -16,10 +16,10 @@ def ispisi_meniMenadzer():
     print("(5) Izlaz: ")
     print()
 
-def dodaj_novogRadnika(korisnici):
 
-    # Kao parametar funkcija prima listu korisnika
-    # Sluzi za dodavanje novog prodavca
+def dodaj_novogRadnika(korisnici):
+    """Kao parametar funkcija prima listu korisnika
+       Sluzi za dodavanje novog prodavca"""
 
     korisnicko_ime = ""
     while True:
@@ -53,9 +53,8 @@ def dodaj_novogRadnika(korisnici):
 
 
 def novi_datum(unesiDatum):
-
-    # Kao parametar prima poruku za unos datuma
-    # Funkcija sluzi za proveru formata datuma i vremena
+    """Kao parametar prima poruku za unos datuma
+       Funkcija sluzi za proveru formata datuma i vremena"""
 
     dan = 0
     mje = 0
@@ -69,7 +68,7 @@ def novi_datum(unesiDatum):
             mje = q[1]
             god = q[2]
             break
-        except:
+        except Exception:
             print("Unijeli ste neispravan datum!")
     sat = 0
     min = 0
@@ -81,17 +80,15 @@ def novi_datum(unesiDatum):
             sat = m[0]
             min = m[1]
             break
-        except:
+        except Exception:
             print("Los unos vremena !")
 
     return datetime.datetime(int(god), int(mje), int(dan), int(sat), int(min))          # 24.12.2017. 14:22
 
 
-
 def uredi_datum(tumda):
-
-    # Kao parametar prima datum u stringu
-    # Funkcija sluzi za konverziju iz stringa u datetime objekat
+    """Kao parametar prima datum u stringu
+       Funkcija sluzi za konverziju iz stringa u datetime objekat"""
 
     pr = tumda.split(" ")
     datum = pr[0].split(".")
@@ -105,9 +102,8 @@ def uredi_datum(tumda):
 
 
 def izvjestaj_maker(instrumenti, tipovi_instrumenata, racuni):
-
-    # Kao parametar prima listu instumenata, tipova, i racuna
-    # Funkcija pravi izvjestaj menadzera
+    """Kao parametar prima listu instumenata, tipova, i racuna
+       Funkcija pravi izvjestaj menadzera"""
 
     while True:
         Izvjestaj = []
@@ -160,9 +156,8 @@ def izvjestaj_maker(instrumenti, tipovi_instrumenata, racuni):
                         if m[3] == tip_instr:
                             zarada += brojac[j] * m[2]
                             Izvjestaj.append({"Sifra inst.": m[0], "Naziv inst.": j, "Proizvodjac": m[1],
-                                             "Tip inst.": m[3],
-                                             "Cijena": str(brojac[j] * m[2]) + "(" + str(m[j]) + " x " + str(m[2]) + ")",
-                                             "Datum i vrijeme kupovine": i["Datum i vrijeme kupovine"]})
+                                              "Tip inst.": m[3], "Cijena": str(brojac[j] * m[2]) + "(" + str(m[j]) + " x " + str(m[2]) + ")",
+                                              "Datum i vrijeme kupovine": i["Datum i vrijeme kupovine"]})
         else:
             print("Zao nam je, unos je pogresan. Pokusajte ponovo!")
             print()
@@ -173,9 +168,8 @@ def izvjestaj_maker(instrumenti, tipovi_instrumenata, racuni):
 
 
 def vrati_infoInstrumenta(naziv_instr, instrumenti, tipovi_instrumenata):
-
-    # Kao parametar prima naziv instrumenta, listu instrumenata, i tipove instrumenata
-    # Funkcija za zadato ime, vraca sifru proizvodjaca cenu i tip instrumenta
+    """Kao parametar prima naziv instrumenta, listu instrumenata, i tipove instrumenata
+       Funkcija za zadato ime, vraca sifru proizvodjaca cenu i tip instrumenta"""
 
     vraca = []
     for i in instrumenti:
@@ -190,9 +184,8 @@ def vrati_infoInstrumenta(naziv_instr, instrumenti, tipovi_instrumenata):
 
 
 def opcije_menadzer(korisnici, instrumenti, tipovi_instrumenata, racuni):
-
-    # Kao parametar prima listu korisnika, instrumenata, tipova i racuna
-    # Funkcija prikazuje osnovni meni prodavca i njegove funkcionalnosti
+    """Kao parametar prima listu korisnika, instrumenata, tipova i racuna
+       Funkcija prikazuje osnovni meni prodavca i njegove funkcionalnosti"""
 
     odabrana_opcija = 0
     while odabrana_opcija != "5":
@@ -211,6 +204,3 @@ def opcije_menadzer(korisnici, instrumenti, tipovi_instrumenata, racuni):
         else:
             print("Zao nam je, unos je pogresan. Pokusajte ponovo!")
             print()
-
-
-

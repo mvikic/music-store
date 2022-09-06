@@ -21,3 +21,5 @@ pperic|pperic|Pero|Peric|kupac
 Banjac|banjac123|Mihajlo|Banjac|kupac
 njacba|njacba123|Mihajlo|Banjac|radnik
 Ksenija|ksenija123|Ksenija|Stanojevic|kupac
+vikic|vikic33|Marko|Vikic|kupac
+lukar|lukar|Luka|Roncevic|kupac

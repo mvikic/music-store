@@ -13,4 +13,4 @@ V93|Silver|Tama|13|1035.0|T3|False
 V94|SBP2|Yamaha|8|1429.0|T3|False
 V95|JK6F5|Yamaha|8|1255.0|T3|False
 V96|Stradivari|Stradivari|122|9999.0|T1|False
-V99|Kontrabas|Yamaha|12|5004.0|T2|False
+V99|Kontrabas|Yamaha|4|5004.0|T2|False

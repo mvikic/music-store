@@ -3,9 +3,9 @@ import ucitavanje_korisnika
 import datetime
 from collections import Counter
 
-def ispis_menija():
 
-    # Funkcija za ispis funkcionalnosti kupca
+def ispis_menija():
+    """Funkcija za ispis funkcionalnosti kupca"""
 
     print()
     print("(1) Prikazi sve instrumente na lageru: ")
@@ -17,9 +17,8 @@ def ispis_menija():
 
 
 def opcije_kupac(kupac, instrumenti, tipovi_instrumenata, racuni):
-
-    # Kao parametar prima trenutnog kupca,listu korisnika, instrumenata, tipova i racuna
-    # Funkcija prikazuje osnovni meni prodavca i njegove funkcionalnosti
+    """Kao parametar prima trenutnog kupca,listu korisnika, instrumenata, tipova i racuna
+       Funkcija prikazuje osnovni meni prodavca i njegove funkcionalnosti"""
 
     odabrana_opcija = 0
     while odabrana_opcija != "6":
@@ -41,9 +40,8 @@ def opcije_kupac(kupac, instrumenti, tipovi_instrumenata, racuni):
 
 
 def pogresan_unosKolicine(kolicina, koliko_ima):
-
-    # Kao parametar prima kolicinu i trenutnu dostupnost odabranog instrumenta u sistemu
-    # Funkcija sluzi za provjeru ispravnosti unosta za odredjeni instrument
+    """Kao parametar prima kolicinu i trenutnu dostupnost odabranog instrumenta u sistemu
+       Funkcija sluzi za provjeru ispravnosti unosta za odredjeni instrument"""
 
     try:
         b = int(kolicina)
@@ -52,17 +50,16 @@ def pogresan_unosKolicine(kolicina, koliko_ima):
             return True
         if kolicina.isnumeric() and b > 0:
             return False
-    except:
+    except Exception:
         pass
     print("Molimo, unesite cio broj!(veci od 0)")
     return True
 
 
 def kupovina_instrumenta(kupac, instrumenti, racuni):
+    """Kao parametar prima trenutnog kupca, listu instrumenata i racuna
+       Funkcija sluzi za obradu kupovine trenutnog kupca"""
 
-    # Kao parametar prima trenutnog kupca, listu instrumenata i racuna
-    # Funkcija sluzi za obradu kupovine trenutnog kupca
-    ########
     nova_sifra = nova_sifraRacuna(racuni)
     datum_vrijeme = datetime.datetime.today().strftime("%d.%m.%Y. %H:%M")
     korisnicko_ime = kupac["Korisnicko ime"]
@@ -94,8 +91,7 @@ def kupovina_instrumenta(kupac, instrumenti, racuni):
     print("Kupovina uspjesna! Kupili ste: ")
     for i in kupljeni_instrumenti:
         print("Instrument: " + i + " x " + str(kupljeni_instrumenti[i]) + " = " +
-              ukupan_trosak(i,kupljeni_instrumenti[i], instrumenti))
-
+              ukupan_trosak(i, kupljeni_instrumenti[i], instrumenti))
 
     print("Ukupno za uplatu: " + str(ukupna_cijena))
     print()
@@ -106,7 +102,7 @@ def kupovina_instrumenta(kupac, instrumenti, racuni):
             if float(uplaceno) < ukupna_cijena:
                 print("Nedovoljan iznos uplacene sume!")
                 continue
-        except:
+        except Exception:
             print("Molimo vas da unesete cjelobrojni iznos")
             continue
         break
@@ -115,17 +111,17 @@ def kupovina_instrumenta(kupac, instrumenti, racuni):
     for i in kupljeni_instrumenti:
         instrmnt += (i + ",") * kupljeni_instrumenti[i]
     instrmnt = instrmnt[:len(instrmnt) - 1]
-    m = {"Sifra": nova_sifra, "Kupljeni instrumenti": instrmnt, "Korisnicko ime kupca": korisnicko_ime,
-         "Uplata": uplaceno, "Ukupna cijena": ukupna_cijena, "Kusur": uplaceno - ukupna_cijena,
-         "Datum i vrijeme kupovine": datum_vrijeme}
+    m = {"Sifra": nova_sifra, "Kupljeni instrumenti": instrmnt,
+         "Korisnicko ime kupca": korisnicko_ime,
+         "Uplata": uplaceno, "Ukupna cijena": ukupna_cijena,
+         "Kusur": uplaceno - ukupna_cijena, "Datum i vrijeme kupovine": datum_vrijeme}
     racuni.append(m)
     ucitavanje_korisnika.snimi_racune(racuni)
 
 
 def ukupan_trosak(instrument, kolicina, instrumenti):
-
-    #Kao parametar prima naziv instrumenta, kupljenu kolicinu, listu instrumenata
-    #Funkcija sluzi za racunanje ukupne cene kostanja zadatog instrumenta
+    """Kao parametar prima naziv instrumenta, kupljenu kolicinu, listu instrumenata
+       Funkcija sluzi za racunanje ukupne cene kostanja zadatog instrumenta"""
 
     for i in instrumenti:
         if i["Naziv"] == instrument:
@@ -134,18 +130,16 @@ def ukupan_trosak(instrument, kolicina, instrumenti):
 
 
 def nova_sifraRacuna(racuni):
-
-    # Kao parametar prima listu racuna
-    # Funkcija sluzi za generisanje naredne sifre racuna
+    """Kao parametar prima listu racuna
+       Funkcija sluzi za generisanje naredne sifre racuna"""
 
     naredni = max([int(x["Sifra"][1:]) for x in racuni])
     return "R" + str(naredni + 1)
 
 
 def vrati_zaNaziv(naziv, instrumenti, tipovi_instrumenata):
-
-    # Kao parametar prima naziv instrumenta, listu instrumenata, i tipove instrumenata
-    # Funkcija za zadato ime, vraca sifru proizvodjaca cenu i tip instrumenta
+    """Kao parametar prima naziv instrumenta, listu instrumenata, i tipove instrumenata
+       Funkcija za zadato ime, vraca sifru proizvodjaca cenu i tip instrumenta"""
 
     vraca = []
     for i in instrumenti:
@@ -160,9 +154,8 @@ def vrati_zaNaziv(naziv, instrumenti, tipovi_instrumenata):
 
 
 def prethodno_kupljeno(kupac, instrumenti, tipovi_instrumenata, racuni):
-
-    # Kao parametar prima trenutnog kupca, listu instrumenata, tipove,racune
-    # Funkcija prikazuje sve kupovine trenutnog ulogovanog kupca
+    """Kao parametar prima trenutnog kupca, listu instrumenata, tipove,racune
+       Funkcija prikazuje sve kupovine trenutnog ulogovanog kupca"""
 
     kupio = []
     for i in racuni:
